@@ -6,31 +6,54 @@
     var student = ViewBag.Student;
     var list = ViewBag.List;
 
-    
-
 }
-<!--
-<style>
-    div{
-        margin-bottom: 10px;
-    }
 
-</style>
--->
-<div>
-    現在時間: @date.ToString("yyyy/MM/dd HH:mm:ss")
-</div>
+@model MVC_Test.Models.Student
 
-<div>
-    學生成績: @student.ToString()
-</div>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
 
-@for (int i=0;i< list.Count; i++)
-{
-    <div>
-        @list[i].ToString();
+
+<form style="margin-left:10px;">
+    <div class="form-group">
+        <label for="exampleInputEmail1">學號</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="@Model.id">
+        <small id="emailHelp" class="form-text text-muted">請輸入數字</small>
     </div>
-}
+    <div class="form-group">
+        <label for="exampleInputPassword1">姓名</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" value="@Model.name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">分數</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="@Model.score">
+    </div>
+    <button type="submit" class="btn btn-primary">確定</button>
+</form>
 
+@*
+    <style>
+        div{
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+
+        <div>
+            現在時間: @date.ToString("yyyy/MM/dd HH:mm:ss")
+        </div>
+
+        <div>
+            學生成績: @student.ToString()
+        </div>
+
+        @for (int i=0;i< list.Count; i++)
+        {
+            <div>
+                @list[i].ToString();
+            </div>
+        }
+*@
 
 

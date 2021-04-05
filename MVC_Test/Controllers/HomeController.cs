@@ -14,19 +14,21 @@ namespace MVC_Test.Controllers
         public ActionResult Index()
         {
             DateTime date = DateTime.Now;
-            Student data = new Student();
-            List<Student> list = new List<Student>();
-            list.Add(new Student("1", "小明", 80));
-            list.Add(new Student("2", "小華", 70));
-            list.Add(new Student("3", "小英", 60));
-            list.Add(new Student("4", "小李", 50));
-            list.Add(new Student("5", "小張", 40));
+            //Student data = new Student();
+            //List<Student> list = new List<Student>();
+            //list.Add(new Student("1", "小明", 80));
+            //list.Add(new Student("2", "小華", 70));
+            //list.Add(new Student("3", "小英", 60));
+            //list.Add(new Student("4", "小李", 50));
+            //list.Add(new Student("5", "小張", 40));
 
             ViewBag.Date = date;
-            ViewBag.Student = data;
-            ViewBag.List = list;
+            //ViewBag.Student = data;
+            //ViewBag.List = list;
 
-            return View();
+            Student data = new Student("1","小名",80);
+
+            return View(data);
         }
         public ActionResult Hello()
         {
